@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+
+    <!-- normalize link -->
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+
+    <!-- google fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <!-- styles link -->
+    <link rel="stylesheet" href="assets/styles/index.css">
+</head>
+<body>
+    <header class="header">
+        <!-- logo -->
+        <a href="index.html">
+            <h1>PANDINI'S TEA</h1>
+        </a>
+    </header>
+
+    <nav class="nav">
+        <a class="nav__a nav__a--active" href="index.html">Store</a>
+        <a class="nav__a" href="about-us.html">About us</a>
+    </nav>
+
+    <main>
+        <h1>Chá the best</h1>
+
+        <div class="shirt">
+
+            <div class="div__shirt-img">
+                <img class="shirt__img" src="./assets/img/chaFundo.jpg" alt="">
+            </div>
+           
+
+            <div class="shirt__content">
+                <p>
+                    AQUI VOCÊ ENCONTRA O MELHOR SITE PARA VENDA DE CHÁ ONLINE, AQUI A VARIEDADE DE CHÁS É TÃO GRANDE QUE VOCÊ ENCONTRA CHÁ DE TODOS OS TIPOS E GOSTOS.
+                </p>
+
+                <form class="form">
+                    <select class="form__field" >
+                        <option selected disabled>Selecione o tipo da caixa: </option>
+                        <option>Caixa pequena (2 qtd)</option>
+                        <option>Caixa média (3 qtd)</option>
+                        <option>Caixa grande (5 qtd)</option>
+                    </select>
+
+                    <input class="form__field" type="number" placeholder="Quantity" min="1">
+                    <input class="form__submit" type="submit" value="Add">
+                </form>
+            </div><!-- shirt__content -->
+        </div><!-- shirt -->
+    </main>
+    <footer class="footer">
+        <p class="footer__p">PANDINI'S STORE - All rights reserved.</p>
+    </footer>
+</body>
+</html>

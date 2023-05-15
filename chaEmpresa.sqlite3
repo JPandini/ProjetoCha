@@ -1,0 +1,86 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.9
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tempo de Geração: 02/05/2023 às 21h39min
+-- Versão do Servidor: 5.5.20
+-- Versão do PHP: 5.3.9
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Banco de Dados: `cha`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `marca`
+--
+
+CREATE TABLE IF NOT EXISTS `marca` (
+  `codigo` int(5) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `marca`
+--
+
+INSERT INTO `marca` (`codigo`, `nome`) VALUES
+(1, 'Império'),
+(2, 'Mundo do chá'),
+(3, 'Universo Chá'),
+(4, 'Super chá'),
+(5, 'The best Tea');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
+--
+
+CREATE TABLE IF NOT EXISTS `produto` (
+  `codigo` int(5) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `codmarca` int(5) NOT NULL,
+  `preco` int(5) NOT NULL,
+  `validade` date NOT NULL,
+  `foto` varchar(100) NOT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `codmarca` (`codmarca`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`codigo`, `nome`, `codmarca`, `preco`, `validade`, `foto`) VALUES
+(1, 'Chá verde', 1, 10, '2023-05-10', 'cha1.png'),
+(2, 'Chá de pessego', 2, 10, '2023-05-03', 'cha2.png'),
+(3, 'Chá Preto', 3, 10, '2023-05-08', 'cha3.png'),
+(4, 'Chá Branco', 4, 10, '2023-04-11', 'cha4.png'),
+(5, 'Chá Pra Secar', 5, 10, '2023-01-10', 'cha5.png');
+
+--
+-- Restrições para as tabelas dumpadas
+--
+
+--
+-- Restrições para a tabela `produto`
+--
+ALTER TABLE `produto`
+  ADD CONSTRAINT `produto_ibfk_1` FOREIGN KEY (`codmarca`) REFERENCES `marca` (`codigo`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
